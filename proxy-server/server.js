@@ -6,7 +6,8 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
+
 
 // Fetch city suggestions using Geo API
 app.get('/cities', async (req, res) => {
