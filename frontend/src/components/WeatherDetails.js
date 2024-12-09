@@ -14,9 +14,9 @@ const WeatherDetails = ({ city, onCardClick }) => {
 
     const fetchWeather = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/weather', {
-          params: { lat: city.lat, lon: city.lon },
-        });
+		const response = await axios.get('https://weather-project-proxy-server.onrender.com/weather', {
+		  params: { lat: city.lat, lon: city.lon },
+		});
         setWeatherData(response.data);
       } catch (error) {
         console.error('Error fetching weather data:', error);

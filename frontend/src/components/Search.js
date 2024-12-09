@@ -11,9 +11,10 @@ const Search = ({ onCitySelect }) => {
     if (!input.trim()) return;
 
     try {
-      const response = await axios.get('http://localhost:5000/cities', {
-        params: { city: input },
-      });
+	const response = await axios.get('https://weather-project-proxy-server.onrender.com/cities', {
+	  params: { city: input },
+	});
+
       setSuggestions(response.data);
     } catch (error) {
       console.error('Error fetching cities:', error);
